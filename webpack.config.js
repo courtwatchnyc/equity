@@ -13,7 +13,7 @@ module.exports = {
     filename: './public/bundle.js'
   },
   resolve: {
-    extensions: ['.js', '.jsx']
+    extensions: ['.js', '.jsx']  
   },
   devtool: 'source-map',
   watchOptions: {
