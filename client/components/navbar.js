@@ -2,11 +2,18 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
+import Typography from '@material-ui/core/Typography';
 import {logout} from '../store'
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+
 
 const Navbar = ({handleClick, isLoggedIn}) => (
-  <div>
-    <h1>CourtWatch</h1>
+  <AppBar color="default" position="absolute" className="navvy">
+  <Toolbar>
+    <Typography variant="h6" color="inherit" noWrap>
+      CourtWatch NYC
+    </Typography>
     <nav>
       {isLoggedIn ? (
         <div>
@@ -25,7 +32,10 @@ const Navbar = ({handleClick, isLoggedIn}) => (
       )}
     </nav>
     <hr />
-  </div>
+  </Toolbar>
+</AppBar>
+
+    
 )
 
 /**

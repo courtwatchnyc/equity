@@ -6,6 +6,38 @@
 // See an example import below
 // @import './component.scss';
 
+.navvy {
+  width: 100vw;
+  height: 10vh;
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  position: absolute;
+  margin: auto;
+  align-items: flex-start;
+  justify-content: flex-start;
+  top: 0;
+  padding: 10px;
+}
+
+.loginButton {
+  width: 15vw
+}
+
+.login {
+  display: flex;
+  flex: 0;
+  width: 20vw;
+  height: 30vh;
+  text-align: center;
+  flex-direction: column;
+  padding: 5px;
+  margin: auto;
+  top: 40%;
+  left: 40%;
+  position: absolute;
+}
+
 body {
   font-family: sans-serif;
 

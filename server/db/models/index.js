@@ -22,7 +22,7 @@ const PleaDiscussion = require('./plea-discussion')
  Case.hasOne(Defendant)
 
  //has stores in target -- belongs to stores in source
- Judge.hasMany(Case)
+Judge.hasMany(Case)
 CourtRoom.hasMany(Case)
 Charge.hasOne(Case)
 PleaDiscussion.hasOne(Case)
