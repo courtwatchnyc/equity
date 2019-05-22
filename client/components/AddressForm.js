@@ -4,63 +4,14 @@ import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
-import withStyles from '@material-ui/core/styles/withStyles';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import Paper from '@material-ui/core/Paper';
 
-const styles = theme => ({
-    appBar: {
-      position: 'abolute',
-    },
-    layout: {
-      width: 'auto',
-      marginTop: 150,
-      marginLeft: theme.spacing.unit * 2,
-      marginRight: theme.spacing.unit * 2,
-      [theme.breakpoints.up(600 + theme.spacing.unit * 2 * 2)]: {
-        width: 600,
-        marginLeft: 'auto',
-        marginRight: 'auto',
-      },
-    },
-    paper: {
-      marginTop: theme.spacing.unit * 3,
-      marginBottom: theme.spacing.unit * 3,
-      padding: theme.spacing.unit * 2,
-      [theme.breakpoints.up(600 + theme.spacing.unit * 3 * 2)]: {
-        marginTop: theme.spacing.unit * 6,
-        marginBottom: theme.spacing.unit * 6,
-        padding: theme.spacing.unit * 3,
-      },
-    },
-    stepper: {
-      padding: `${theme.spacing.unit * 3}px 0 ${theme.spacing.unit * 5}px`,
-    },
-    buttons: {
-      display: 'flex',
-      justifyContent: 'flex-end',
-    },
-    button: {
-      marginTop: theme.spacing.unit * 3,
-      marginLeft: theme.spacing.unit,
-    },
-  });
-
-const CourtForm = props => {
-    const { classes } = props
+function AddressForm() {
   return (
     <React.Fragment>
-    <CssBaseline />
-    <main className={classes.layout}>
-      <Paper className={classes.paper}>
-        <Typography component="h1" variant="h4" align="center">
-          CourtWatch Form
-        </Typography>
-            <React.Fragment>
-            <Typography variant="h6" gutterBottom>
-                Case Information
-            </Typography>
-            <Grid container spacing={24}>
+      <Typography variant="h6" gutterBottom>
+        Case Information
+      </Typography>
+      <Grid container spacing={24}>
                 <Grid item xs={12} sm={6}>
                 <TextField
                     required
@@ -136,15 +87,17 @@ const CourtForm = props => {
                 <Grid item xs={12}>
                 <FormControlLabel
                     control={<Checkbox color="secondary" name="saveAddress" value="yes" />}
-                    label="Use this address for payment details"
+                    label="Interpreter Needed"
+                />
+                <FormControlLabel
+                    control={<Checkbox color="secondary" name="saveAddress" value="yes" />}
+                    //disable if previous is not selected
+                    label="Interpreter Present"
                 />
                 </Grid>
             </Grid>
             </React.Fragment>
-            </Paper>
-        </main>
-      </React.Fragment>
   );
 }
 
-export const CourtForm2 = withStyles(styles)(CourtForm)
+export default AddressForm;

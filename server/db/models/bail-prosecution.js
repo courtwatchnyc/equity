@@ -2,7 +2,7 @@ const Sequelize = require('sequelize')
 const db = require('../db')
 
 
-const BailProsecution = db.define('bail', {
+const BailProsecution = db.define('bail_prosecution', {
     bail_type: {
         type: Sequelize.ENUM('Cash', 'Bond', 'Other')
     },

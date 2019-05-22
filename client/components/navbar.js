@@ -6,15 +6,15 @@ import Typography from '@material-ui/core/Typography';
 import {logout} from '../store'
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-
+import Button from '@material-ui/core/Button';
 
 const Navbar = ({handleClick, isLoggedIn}) => (
   <AppBar color="default" position="absolute" className="navvy">
   <Toolbar>
-    <Typography variant="h6" color="inherit" noWrap>
+    <Typography variant="h4" color="inherit" className="header" noWrap>
       CourtWatch NYC
     </Typography>
-    <nav>
+  <nav className="nav-buttons">
       {isLoggedIn ? (
         <div>
           {/* The navbar will show these links after you log in */}
@@ -26,8 +26,8 @@ const Navbar = ({handleClick, isLoggedIn}) => (
       ) : (
         <div>
           {/* The navbar will show these links before you log in */}
-          <Link to="/login">Login</Link>
-          <Link to="/signup">Sign Up</Link>
+          <Button className="navLoginButton" variant="contained" color="primary"><Link className="link-text" to="/login">Login</Link></Button>
+          <Button className="navLoginButton" variant="contained" color="secondary"><Link className="link-text" to="/signup">Sign Up</Link></Button>
         </div>
       )}
     </nav>

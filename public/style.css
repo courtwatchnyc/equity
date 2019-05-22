@@ -1,3 +1,32 @@
+.header {
+  display: flex;
+  flex: 1;
+  width: 90vw; }
+
+.additional-charges {
+  display: flex;
+  flex-direction: row wrap;
+  justify-content: space-around;
+  overflow: hidden;
+  padding-bottom: 15px; }
+
+.navLoginButton {
+  display: flex;
+  flex: 1;
+  width: 5vw;
+  height: 7vh; }
+
+.link-text {
+  color: white;
+  font-weight: bold;
+  font-size: 12px; }
+
+.nav-buttons {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  justify-content: flex-end; }
+
 .navvy {
   width: 100vw;
   height: 10vh;
@@ -21,6 +50,7 @@
   height: 30vh;
   text-align: center;
   flex-direction: column;
+  justify-content: center;
   padding: 5px;
   margin: auto;
   top: 40%;
@@ -28,7 +58,8 @@
   position: absolute; }
 
 body {
-  font-family: sans-serif; }
+  font-family: sans-serif;
+  background-color: #f7f7f7; }
   body a {
     text-decoration: none; }
   body label {
