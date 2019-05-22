@@ -4,8 +4,10 @@ import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
+import RadioButton from './radio-menu-horizontal'
 
 function AddressForm() {
+    const duration = ['< 2 min', '2-5 min', '5+ min']
   return (
     <React.Fragment>
       <Typography variant="h6" gutterBottom>
@@ -95,6 +97,7 @@ function AddressForm() {
                     label="Interpreter Present"
                 />
                 </Grid>
+                <RadioButton options={duration}/>
             </Grid>
             </React.Fragment>
   );
