@@ -5,7 +5,6 @@ import Grid from '@material-ui/core/Grid';
 import TextField from '@material-ui/core/TextField';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
-import NativeSelects from './drop-down-menu'
 import NativeSelectsWithLogic from './drop-down-menu-logic'
 
 const PaymentForm = () => {

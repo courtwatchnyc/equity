@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import NativeSelects from './drop-down-menu'
+import NativeSelectsWithLogic from './drop-down-menu-logic'
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import TextField from '@material-ui/core/TextField';
@@ -27,11 +28,11 @@ function Plea(props) {
         Plea Discussion
       </Typography>
       DA Say?
-      <NativeSelects />
+      <NativeSelectsWithLogic label='DA Say?' dropDownOptions />
       Plea
-      <NativeSelects />
+      <NativeSelectsWithLogic label='Plea' dropDownOptions />
       Sentence
-      <NativeSelects />
+      <NativeSelectsWithLogic label='Sentence' dropDownOptions />
       <TextField
         id="outlined-multiline-static"
         label="Multiline"
@@ -43,16 +44,16 @@ function Plea(props) {
       />
 
       Case Resolution
-      <NativeSelects />
+      <NativeSelectsWithLogic label='Case Resolution' dropDownOptions />
       <FormControlLabel
                     control={<Checkbox color="secondary" name="saveAddress" value="yes" />}
                     //disable if previous is not selected
                     label="Did the case resolve?"
                 />
-        Plea
-      <NativeSelects />
-      Sentence
-      <NativeSelects />
+        Plea To:
+        <NativeSelectsWithLogic label='Plea To:' dropDownOptions />
+        Sentence
+        <NativeSelectsWithLogic label='Sentence' dropDownOptions />
       <FormControlLabel
                     control={<Checkbox color="secondary" name="saveAddress" value="yes" />}
                     //disable if previous is not selected
