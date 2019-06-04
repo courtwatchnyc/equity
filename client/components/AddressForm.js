@@ -5,6 +5,7 @@ import TextField from '@material-ui/core/TextField';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import RadioButton from './radio-menu-horizontal'
+import NativeSelectsWithLogic from './drop-down-menu-logic'
 
 function AddressForm() {
     const duration = ['< 2 min', '2-5 min', '5+ min']
@@ -25,31 +26,29 @@ function AddressForm() {
                 />
                 </Grid>
                 <Grid item xs={12} sm={6}>
-                <TextField
+                <NativeSelectsWithLogic
                     required
                     id="volunteerName"
                     name="volunteerName"
                     label="Volunteer name"
-                    fullWidth
                     autoComplete="vname"
                 />
                 </Grid>
-                <Grid item xs={12}>
-                <TextField
+                <Grid item xs={12} sm={6}>
+                <NativeSelectsWithLogic
                     required
                     id="borough"
                     name="borough"
                     label="Borough"
-                    fullWidth
                     autoComplete="borough"
                 />
                 </Grid>
-                <Grid item xs={12}>
-                <TextField
+                <Grid item xs={12} sm={6}>
+                <NativeSelectsWithLogic
+                    required
                     id="courtroom"
                     name="courtroom"
                     label="Courtroom"
-                    fullWidth
                     autoComplete="courtroom"
                 />
                 </Grid>

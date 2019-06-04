@@ -8,9 +8,10 @@ import Select from '@material-ui/core/Select';
 const NativeSelectsWithLogic = props => {
     const {dropDownOptions, label} = props
     const valuesForDropDown = Array.isArray(dropDownOptions) ? dropDownOptions : [10, 20, 30]
+    const {width} = props
   const [state, setState] = React.useState({
     age: '',
-    labelWidth: 0,
+    labelWidth: width,
   });
   const inputLabelRef = React.useRef(null);
 
@@ -23,7 +24,7 @@ const NativeSelectsWithLogic = props => {
 
   return (
     <div>
-      <FormControl>
+      <FormControl fullWidth={true}>
         <InputLabel htmlFor="age-native-simple">{label}</InputLabel>
         <Select
           native

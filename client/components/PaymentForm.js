@@ -30,9 +30,13 @@ const PaymentForm = () => {
       <Typography variant="h6" gutterBottom>
         Charge
       </Typography>
-      <Grid>
-        <NativeSelectsWithLogic label='Charge' dropDownOptions={charges} />
-      </Grid>
+      <Grid container spacing={24}>
+        <Grid item xs={12} sm={6}>
+          <NativeSelectsWithLogic label='Charge' dropDownOptions={charges} />
+        </Grid>
+        <Grid item xs={12} sm={6}>
+          <NativeSelectsWithLogic label='Adtl Charges' dropDownOptions={additionalChargeOptions} />
+        </Grid>
         <Grid item xs={12}>
           <FormControlLabel
             control={<Checkbox color="secondary" name="saveCard" value="yes" />}
@@ -43,16 +47,19 @@ const PaymentForm = () => {
             label="Felony"
           />
         </Grid>
-        <NativeSelectsWithLogic label='Additional Charges' dropDownOptions={additionalChargeOptions} />
-        <TextField
-        id="outlined-multiline-static"
-        label="Multiline"
-        multiline
-        rows="6"
-        defaultValue="Notes about the charges"
-        margin="normal"
-        variant="outlined"
-      />
+        <Grid item xs={12}>
+          <TextField
+          id="outlined-multiline-static"
+          label="Multiline"
+          multiline
+          rows="6"
+          defaultValue="Notes about the charges"
+          margin="normal"
+          variant="outlined"
+          fullWidth
+          />
+        </Grid>
+      </Grid>
     </React.Fragment>
   );
 }
