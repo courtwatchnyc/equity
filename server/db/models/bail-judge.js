@@ -3,10 +3,10 @@ const db = require('../db')
 
 
 const BailJudge = db.define('bail_judge', {
-    bail_type: {
+    bailType: {
         type: Sequelize.ENUM('Cash', 'Bond', 'Other')
     },
-    bail_amount: {
+    bailAmount: {
         type: Sequelize.INTEGER
     },
     ROR: {
@@ -15,10 +15,10 @@ const BailJudge = db.define('bail_judge', {
     remand: {
         type: Sequelize.ENUM('Y', 'N')
     },
-    supervised_release: {
+    supervisedRelease: {
         type: Sequelize.ENUM('Y', 'N')
     },
-    order_of_protection: {
+    orderOfProtection: {
         //fill options later
         type: Sequelize.ENUM('Full', 'Limited', 'None')
     },

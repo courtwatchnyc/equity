@@ -9,11 +9,11 @@ const CaseResolution = db.define('resolution', {
     how: {
         type: Sequelize.ENUM('Dismiss', 'Plea', 'Sentence')
     },
-    plea_details: {
+    pleaDetails: {
         //fill options later
         type: Sequelize.ENUM('fill me in')
     },
-    sentencing_details: {
+    sentencingDetails: {
         //fill options later
         type: Sequelize.ENUM('fill me in')
     },
