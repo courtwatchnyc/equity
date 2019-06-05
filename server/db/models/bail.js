@@ -8,4 +8,6 @@ const Bail = db.define('bail', {
     },
   })
 
+
+
 module.exports = Bail
