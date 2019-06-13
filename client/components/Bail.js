@@ -6,6 +6,10 @@ import Typography from '@material-ui/core/Typography';
 import NativeSelectsWithLogic from './drop-down-menu-logic'
 
 const styles = theme => ({
+  root: {
+    display: 'flex',
+    flexDirection: 'row',
+  },
   listItem: {
     padding: `${theme.spacing.unit}px 0`,
   },
@@ -26,37 +30,60 @@ function Bail(props) {
       <Typography variant="h5" gutterBottom>
         Bail Information
       </Typography>
-      <Grid container spacing={24}>
+      <Grid direction="row" container spacing={24}>
       {
         headers.map((val) => {
           return (
-            <HeaderComponent key={val} val={val} />
+            <HeaderComponent item xs={6} sm={3} direction="row" key={val} val={val} />
           )
         })
       }
+      <BodyComponent direction="row" val="Bail" />
+      <BodyComponent direction="row" val="ROR" />
+      <BodyComponent direction="row" val="Remand" />
+      <BodyComponent direction="row" val="Supervised Release" />
+      <BodyComponent direction="row" val="Order of Protection" />
       </Grid>
-      <HeaderComponent val="Bail" />
-      <HeaderComponent val="ROR" />
-      <HeaderComponent val="Remand" />
-      <HeaderComponent val="Supervised Release" />
-      <HeaderComponent val="Order of Protection" />
     </React.Fragment>
   );
 }
 
 const HeaderComponent = props => {
-  const {val} = props
+  const {val, direction} = props
+  const arr = [0,1,2,3]
   return (
-    <Grid container spacing={24}>
-      <Grid item xs={6} sm={3}>
-        <Typography variant="subtitle2" gutterBottom>
-          {val}
-        </Typography>
-      </Grid>
-      {(()=>{
-        for (let i = 0; i < 3; i++) {
+      <>
+      {arr.map(idx => {
+          if (idx === 0) {
+              return (
+              <Grid direction={direction} item xs={6} sm={3}>
+                <Typography variant="subtitle2" gutterBottom>
+                  {val}
+                </Typography>
+              </Grid>
+              )
+      }})}
+    </>
+  )
+}
+
+const BodyComponent = props => {
+  const {val, direction} = props
+  const arr = [0,1,2,3]
+  return (
+      <>
+      {arr.map(idx => {
+          if (idx === 0) {
+              return (
+              <Grid direction={direction} item xs={6} sm={3}>
+                <Typography variant="subtitle2" gutterBottom>
+                  {val}
+                </Typography>
+              </Grid>
+              )
+          }
           return (
-            <Grid item xs={6} sm={3}>
+            <Grid direction="row" key={idx} item xs={6} sm={3}>
               <NativeSelectsWithLogic
                 required
                 id="volunteerName"
@@ -65,9 +92,11 @@ const HeaderComponent = props => {
                 autoComplete="vname"
               />
             </Grid>
-          )}
-      })()}
-    </Grid>
+          )
+          }
+      ) 
+      }
+    </>
   )
 }
 
